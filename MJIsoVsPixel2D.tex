@@ -1,0 +1,97 @@
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\makeatletter
+\def\input@path{{theme/}}
+\makeatother
+\usetheme{CleanEasy}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+% \usepackage[brazil]{babel}
+\usepackage{fix-cm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usetikzlibrary{positioning, shapes, arrows, calc, decorations.pathreplacing, arrows.meta, backgrounds, patterns, overlay-beamer-styles}
+\usepackage{etoolbox}
+\usepackage{animate}
+\definecolor{uvablue}{RGB}{35,45,75}
+\definecolor{uvaorange}{RGB}{229,114,0}
+\definecolor{UniBlue}{RGB}{83,121,170}
+\definecolor{forestgreen}{RGB}{0,128,0}
+\definecolor{bronze}{rgb}{0.8, 0.5, 0.2}
+\definecolor{purple}{RGB}{128,0,128}
+\definecolor{maroon}{RGB}{184,15,10}
+\definecolor{grey}{RGB}{128,128,128}
+\definecolor{bondiblue}{rgb}{0.0, 0.58, 0.71}
+\definecolor{gold}{RGB}{160,116,10}
+\definecolor{peacockblue}{RGB}{0,164,180}
+\definecolor{pastelblue}{RGB}{174, 198,207}
+\definecolor{pastelgreen}{RGB}{170, 208, 179}
+\definecolor{darkblue}{RGB}{0,90, 142}
+\definecolor{olivegreen}{RGB}{0, 73, 63}
+\usepackage{ragged2e}
+%----------------------------------------------------------------------------------------
+%    LAYOUT CONFIGURATION
+%----------------------------------------------------------------------------------------
+\input{configs/configs}
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+\input{configs/title_page}
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[plain]{Contents}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+\end{frame}
+\section{Example Section} 
+\begin{frame}{single plot}
+            \centering
+            \includegraphics[width=0.5\linewidth]{figures/ABCDPlane_2Mu2E_200GeV_0p25GeV_0p1mm_info.png}
+    
+\end{frame}
+
+\begin{frame}{multiple plots with text}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.65\linewidth]{figures/ratio_Lxy_2Mu2E_200GeV_0p25GeV_0p01mm_Loose-Loose.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering 
+            \includegraphics[width=0.65\linewidth]{figures/ratio_Lxy_2Mu2E_200GeV_0p25GeV_5p0mm_Loose-Loose.png}
+        \end{column}
+    \end{columns}
+    \textbf{Overall, not too many large changes in Reco Efficiency as a function of $L_{xy}$}
+    \begin{itemize}
+        \item At larger decay lengths ($L_{xy}$ > 0.3 cm), there seems to be a slight dip in reconstruction efficiency
+        \item The loss in efficiency points to an electron reconstruction issue
+        \begin{itemize}
+            \item The efficiency dips because our electron reconstruction suffers in the tracker, but we regain efficiency when electrons are reconstructed as photons in ECAL
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
